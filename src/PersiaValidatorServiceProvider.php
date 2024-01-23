@@ -2,6 +2,7 @@
 
 namespace Mrtolouei\PersiaValidator;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +30,8 @@ class PersiaValidatorServiceProvider extends ServiceProvider
     protected function registerTranslations(): void
     {
         $packageLanguagesPath = __DIR__.'/../lang/';
-        $languagesPath = base_path('lang/');
+
+        $languagesPath = (int) App::version() >= 9 ? base_path('lang/') : resource_path('lang/');
         $languagesNamespace = 'persia-validation';
 
         $this->publishes([
