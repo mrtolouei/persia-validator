@@ -99,7 +99,7 @@ table {
     overflow: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    word-break: break-word;
+    word-break: keep-all;
 }
 table tr td, table tr th{
     padding: 6px 10px;
@@ -124,5 +124,8 @@ table tr:nth-child(even) td {
     }
     .column-left {
         display: none;
+    }
+    table {
+        word-break: break-word;
     }
 }
