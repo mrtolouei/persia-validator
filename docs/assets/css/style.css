@@ -92,6 +92,7 @@ h2 {
     border-radius: 5px;
     letter-spacing: 0;
     max-width: 100%;
+    word-break: break-word;
 }
 table {
     display: block;
