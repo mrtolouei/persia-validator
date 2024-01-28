@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Persian Laravel validation package">
+    <meta name="keywords" content="laravel-validation,persian-validation,farsi-validation,laravel-farsi,laravel">
+    <meta name="google-site-verification" content="1K2N5ctu8SEza0XhjloDxBmpsQFFk1dYXQL4zgiTLvU" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Persia Laravel Validator</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-row">
+                <div class="title">
+                    <a href="" target="_self"><h1>Persia Validator</h1></a>
+                    <h2>Persian Laravel validation package</h2>
+                </div>
+                <div class="navbar-list">
+                    <a href="https://github.com/mrtolouei/persia-validator" target="_self">
+                        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" fill="#fff">
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="content-row">
+                <div class="column-left" id="menu">
+                    <div class="content-list-title">Contents</div>
+                    <ul class="content-list-items">
+                        <li><a href="#introduction" class="active"  target="_self">Introduction</a> </li>
+                        <li><a href="#install" target="_self">Install</a> </li>
+                        <li><a href="#usage" target="_self">Usage</a> </li>
+                        <li><a href="#rules" target="_self">Rules</a> </li>
+                        <li><a href="#contributing" target="_self">Contributing</a> </li>
+                        <li><a href="#license" target="_self">License</a> </li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <div id="introduction" class="content-body">
+                        <h3>Introduction</h3>
+                        <p>The <strong>Persia Validator</strong> package is a Laravel package designed to provide comprehensive Persian (Farsi) validation for web applications built on the Laravel framework. It offers a set of custom validation rules tailored for Persian language-specific input data, such as Persian alphabet strings, Iranian mobile numbers, Jalali dates, and more.</p>
+                        <h4>Requirement</h4>
+                        <ul>
+                            <li>Laravel 8,9,10</li>
+                            <li>PHP 7.4, 8</li>
+                        </ul>
+                    </div>
+                    <div id="install" class="content-body">
+                        <h3>Install</h3>
+                        <p>Navigate to the root of your Laravel project and open a terminal and copy the following code into the terminal.</p>
+                        <div class="code">
+                            <code>composer require mrtolouei/persia-validator</code>
+                        </div>
+                        <p>After installation, to publish the configuration and language files provided by the Persia Validator package, you can use the vendor:publish Artisan command. This command allows you to customize the package configuration and translation files according to your project’s needs.</p>
+                        <div class="code">
+                            <code>php artisan vendor:publish --provider="Mrtolouei\PersiaValidator\PersiaValidatorServiceProvider"</code>
+                        </div>
+                    </div>
+                    <div id="usage" class="content-body">
+                        <h3>Usage</h3>
+                        <p>Example of using the fa_string rule in Laravel validation:</p>
+                        <div class="code">
+                            <code>$request->validate([
+    'name' => 'fa_string',
+    'birthdate' => 'fa_date',
+    'mobile' => 'fa_mobile:without_zero	',
+    //other validations...
+]);</code>
+                        </div>
+                    </div>
+                    <div id="rules" class="content-body">
+                        <h3>Rules</h3>
+                        <p>
+                            The <strong>Persia Validator</strong> package offers custom Laravel validation rules for Persian (Farsi) input, including Persian alphabet strings, numeric values, dates, and more. You can access the validation rules by providing the corresponding rule key as outlined in the following table:
+                        </p>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Rule</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_string</code></td>
+                                <td>Persian alphabet string validation.</td>
+                                <td>علیرضا</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_numeric</code></td>
+                                <td>Persian numeric string validation.</td>
+                                <td>۱۲۳۴</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_string_eng_numeric</code></td>
+                                <td>Persian alphabet with English numeric string validation.</td>
+                                <td>علیرضا 1234</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_not_accept</code></td>
+                                <td>String should not contain Persian alphabet characters.</td>
+                                <td>Alireza</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_date</code></td>
+                                <td>Persian Jalali date validation.</td>
+                                <td>1376/01/01</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_date_between</code></td>
+                                <td>Persian Jalali date within a range validation.</td>
+                                <td>1376/01/01</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_month</code></td>
+                                <td>Persian month validation.</td>
+                                <td>خرداد</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_day</code></td>
+                                <td>Persian day validation.</td>
+                                <td>شنبه</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_mobile</code></td>
+                                <td>Iranian mobile number validation.</td>
+                                <td>09121234567</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_mobile:without_zero</code></td>
+                                <td>Iranian mobile number validation without zero.</td>
+                                <td>9121234567</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_mobile:with_plus</code></td>
+                                <td>Iranian mobile number validation with plus.</td>
+                                <td>+989121234567</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_phone</code></td>
+                                <td>Iranian phone number validation.</td>
+                                <td>02131234567</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_phone:without_code</code></td>
+                                <td>Iranian phone number validation with city code.</td>
+                                <td>31234567</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_id</code></td>
+                                <td>Iranian national identification number validation.</td>
+                                <td>5641981540</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_credit_card</code></td>
+                                <td>Credit card number in Persian digits validation.</td>
+                                <td>5892101270263185 <br> 5892 1012 7026 3185 <br> 5892-1012-7026-3185</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_sheba</code></td>
+                                <td>Iranian Sheba number validation.</td>
+                                <td>IR420150000001005303384708</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">fa_postal_code</code></td>
+                                <td>Iranian postal code validation.</td>
+                                <td>1345678939</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-plaintext highlighter-rouge">separated_numeric</code></td>
+                                <td>Number with comma separator.</td>
+                                <td>100,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="contributing" class="content-body">
+                        <h3>Contributing</h3>
+                        <p>Contributions are welcome! If you have ideas for new features, improvements, or if you encounter any issues, feel free to open an issue or submit a pull request.
+                        </p>
+                    </div>
+                    <div id="license" class="content-body">
+                        <h3>License</h3>
+                        <p>
+                            This package is open-source software licensed under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a> .
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
