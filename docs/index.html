@@ -56,23 +56,23 @@
                         <h3>Install</h3>
                         <p>Navigate to the root of your Laravel project and open a terminal and copy the following code into the terminal.</p>
                         <div class="code">
-                            <code>composer require mrtolouei/persia-validator</code>
+                            <pre>composer require mrtolouei/persia-validator</pre>
                         </div>
                         <p>After installation, to publish the configuration and language files provided by the Persia Validator package, you can use the vendor:publish Artisan command. This command allows you to customize the package configuration and translation files according to your project’s needs.</p>
                         <div class="code">
-                            <code>php artisan vendor:publish --provider="Mrtolouei\PersiaValidator\PersiaValidatorServiceProvider"</code>
+                            <pre>php artisan vendor:publish --provider="Mrtolouei\PersiaValidator\PersiaValidatorServiceProvider"</pre>
                         </div>
                     </div>
                     <div id="usage" class="content-body">
                         <h3>Usage</h3>
                         <p>Example of using the fa_string rule in Laravel validation:</p>
                         <div class="code">
-                            <code>$request->validate([<br>
-                                &nbsp;&nbsp; 'name' => 'fa_string', <br>
-                                &nbsp;&nbsp; 'birthdate' => 'fa_date', <br>
-                                &nbsp;&nbsp; 'mobile' => 'fa_mobile:without_zero', <br>
-                                &nbsp;&nbsp; //other validations... <br>
-                                ]);</code>
+                            <pre>$request->validate([
+    'name' => 'fa_string',
+    'birthdate' => 'fa_date',
+    'mobile' => 'fa_mobile:without_zero',
+    //other validations...
+]);</pre>
                         </div>
                     </div>
                     <div id="rules" class="content-body">

@@ -87,12 +87,11 @@ h2 {
     color: #f85149;
 }
 .code {
-    padding: 10px 30px;
+    padding: 1px 30px;
     background: #21262D;
     border-radius: 5px;
     letter-spacing: 0;
     max-width: 100%;
-    word-break: break-word;
 }
 table {
     display: block;
